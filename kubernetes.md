@@ -1,8 +1,6 @@
 # Kubernetes
 
-## Cheat sheet
-
-### Commands
+## Commands
 
 - `kubectl get <resource> <resource name> -o yaml > definition.yaml` Get the definition of a resource into a yaml
 - `kubectl exec -it <pod name> <? container name> <command>` execute a command in a pod
