@@ -116,7 +116,7 @@ Deux grandes contributions au temps de réponse:
   - priorités fixes: selon importance de la tâche, sa deadline, etc...
   - priorités dynamiques: round-robin, priorisations des événements arrivant à échéance
 
-## Modifiabilité
+## Modificabilité
 
 Concerne le coût (au sens large) du changement.
 
