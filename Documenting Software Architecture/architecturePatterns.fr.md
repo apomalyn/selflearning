@@ -166,9 +166,111 @@ Forme possibles du style:
 - Pas de boucles circulaires
 - Ponts à éviter
 
-## Aspects
+## Allocation
 
+Les éléments logiciels (modules, c&c) de l'architecture intéragissent avec des éléments non-logiciels de l'environnement:
+- de déploiement
+- d'exécution
+- de développement
 
+### Éléments
+
+1. Logiciels: modules, C&C
+2. Environnemental
+
+### Relation
+- "Est alloué à": un élément logiciel est alloué à un élément de l'environnement. La relation d'allocation peut changer dynamiquement.
+
+### Utile pour
+
+Comparer les propriétés requies par l'élément logiciel et les propriétés de l'élément environnemental.
+
+Ex: un temps de réponse de _X_ msec peut nécessiter un processeur éxecutant _Y_ mflops.
+
+### Style architecturaux
+
+#### Déploiement
+
+Allocation d'éléments de style C&C au matériel physique de l'environnement d'exécution.
+
+##### Élements
+
+- Logiciels: provenant d'une C&C: processus, thread, communication, port, etc..
+- Environnementaux: unités physiques de calculs de stockage et communication: CPU, mémoire, disque, lien réseau, etc...
+
+##### Relations
+
+- Est alloué à: montre sur quel élément matériel réside un élément logiciel. La relation peut changer dynamiquement:
+  - migre vers: élément logiciel peut bouger d'un processeur à l'autre (par exemple)
+  - exécution copié vers: une copie existe sur plusieurs processeurs mais un seul est actif à tout moment.
+
+##### Propriétés
+- Éléments matériel de l'environnement
+  - CPU: horloge, nombre de processeurs, vitesse du bus, cache, etc...
+  - Mémoire: capacité, vitesse, extensibilité
+  - Disque: capacité, vitesse, redondance (RAID)
+  - Bande passante réseau
+- Éléments Logiciels
+  - Consommation des ressources: borner le nombre d'instructions moyen/maximum
+  - Contraintes à satisfaire: calcul exécuté en _X_ sec.
+  - Critique à la sécurité: processus de monitoring en exécution.
+  - Migratoire: déclenchement de la migration
+
+##### Utile pour
+
+- Analyser certains attributs de qualité relié à l'exécution:
+  - Performance: allocation de ressources, recherche de goulots d'étranglement, colocalisation de matériel.
+  - Disponibilité: prédire une panne matérielle
+    - déclencher le processus de migration
+  - Sécurité: limiter les services s'exécutant sur un seul composant matériel. Gestion de l'accès physique.
+
+#### Installation
+
+Allocation de composants de type C&C à des éléments de l'infrastructure fichiers dans l'environnement de production:
+- librairies
+- fichiers exécutables, de données, de log, de configuration
+- gestion des versions
+- licenses
+- fichiers d'aide
+- scripts
+- ...
+
+--> Permet de définir quels fichiers seront utilisés, configurés et livrés afin de produire une version chez le client.
+
+##### Éléments
+- Logiciel de type C&C
+- Élément de configuration de l'environnement de production
+
+##### Relations
+
+- "Est contenu dans": arborescence de fichiers/répertoires.
+- "Est alloué à": composant (processus, thread, servlet, données, ...) alloués à un ou plusieurs éléments de configuration.
+
+##### Utile pour
+- Créer des procédutes (automatiques?) de déploiement.
+- Naviguer à travers une structure complexe de fichiers/répertoires
+- Livrer une version particulière
+- Gérer de multiples versions cohabitant chez un client.
+
+#### Attribution de tâches
+Attribution de modules (unités d'implémentation) à des groupes/personnes responsables de la réalisation:
+- implémentation
+- intégration
+- tests
+- environnement de production et de développement
+- évaluation de produits commerciaux/librairies
+- configuration
+
+##### Éléments:
+- Logiciels: modules
+- Environnement: unité organisationnel (développeur, sous-traitant, département, ...)
+
+##### Relation
+
+"Est alloué à": un module est alloué à une unité organisationnel
+
+##### Utile pour
+- Planifier et gérer l'allocation de ressources humaines et financières.
 
 ## Documentation
 
