@@ -1,5 +1,24 @@
 # Apprentissage Machine
 
+## Introduction
+
+L’idée fondatrice de l’intelligence artificielle est apparue dans les années 50 grâce aux réflexions d’Alan
+Turing dans son article « Computing Machinery and Intelligence » (revue Mind, octobre 1950).
+L’expression elle-même a été créée à la conférence de Dartmouth en 1956.
+
+### Test de Turing
+
+### Chambre Chinoise
+
+Expérience de pensée mise en place par John Searle en opposition avec le test de Turing. L'objectif initial est de
+démontrer qu'une intelligence artificielle ne peut être que faible. Dans une pièce fermée, un opérateur qui ne possède
+aucune connaissance en chinois va suivre un test de Turing en chinois, on met à disposition de l'opérateur un catalogue
+de règle pour pouvoir répondre à des phrases en chinois. En poursuivant ironiquement la procédure du test de Turing, 
+test censé démontrer qu'un programme informatique sophistiqué peut être qualifié d'intelligent, Searle imagine que le 
+programme déterminant les réponses qui sont données à l'interlocuteur devient si sophistiqué, et l'opérateur qui répond
+aux questions devient si habile dans la manipulation des symboles, qu'à la fin de l'expérience, les réponses qu'elle 
+donne aux questions ne peuvent être distinguées de celles que donnerait un vrai locuteur chinois de langue maternelle, 
+bien que selon Searle, la personne qu'on imagine enfermée dans la chambre ne comprenne toujours pas un mot de chinois.
 
 ## Machine Learning
 
@@ -50,7 +69,7 @@ On possède quelque étiquette, le modèle va donc essayer de créé des groupes
 ### ZéroR
 
 Se base sur la réponse (_y_) uniquement, il ignore les observations. La réponse est basé sur la plus grande fréquence d'une réponse.
-Exanple: 14 observations, 9 fois _y = true_, 5 fois _y = false_. Donc le modèle va retourné _true_.
+Example: 14 observations, 9 fois _y = true_, 5 fois _y = false_. Donc le modèle va retourné _true_.
 
 | Outlook  	| Temp 	| Humidity 	| Windy 	| Play 	|
 |----------	|------	|----------	|-------	|------	|
@@ -104,7 +123,7 @@ Les applications de Knn:
 Voir slides 30 - 32 du cours 2
 
 p: Proportion d'exemples correspondant à l'étiquette "oui" dans le jeu de données.
-H = -p*log_2(p) - (1-p)log_2(1-p)
+`H = -p*log_2(p) - (1-p)log_2(1-p)`
 
 Pour l'exemple:
 Les H de _f2_ sont:
@@ -114,7 +133,7 @@ H(D2,1) = - 3/13 * log_2(3/13) - 10/13 log_2(10/13) = 0.78
 
 On fait l'entropie moyenne de chaque attribut:
 
-EM(j) = (1 - p_j) * H(Dj,0) + pj * H(Dj,0)
+`EM(j) = (1 - p_j) * H(Dj,0) + pj * H(Dj,0)`
 
 Pour l'exemple:
 
@@ -143,7 +162,7 @@ Toujours dans l'exemple, on choissirait l'attribut _f2_ étant donné qu'il a l'
 **Théorème de Bayes**: Étant donné un ensemble d’entraînement X, la probabilité a
 posteriori d’une hypothèse H, P(H|X) est égale à:
 
-P(H|X) = P(X|H)P(H) / P(X)
+`P(H|X) = P(X|H)P(H) / P(X)`
 
 **Classification**: X appartient à la classe Ci SSI la probabilité P(Ci|X) est la plus
 élevée parmi toutes les probabilités P(Ck|x) des k classes.
@@ -196,6 +215,7 @@ Posons A, les réponses réel du dataset et B les prédiction de réponse du mod
 
 **Précision**: Pour tous les positif dans B, combien sont effectivement positif dans A.
 Il se calcul comme suit: `TP / (TP + FP)`
+
 **Rappel (recall)**: Pour tous les positif dans A, combien sont correctement prédits par le modèle.
 Il se calcul comme suit: `TP / (TP + FN)`
 
@@ -210,11 +230,20 @@ Avec:
 Avec _p_ pour la précision et _r_ pour le rappel (recall).
 
 - `F_1 = 2*(p*r)/(p+r)` moyenne harmonique entre _p_ et _r_
-- `F_beta = ((1 + Beta^2) * TP)/((1+Beta^2) * TP + Beta^2 * FN + FP)`, si Beta -> 0 => précision, si Beta -> infini => rappel
+- `F_beta = ((1 + Beta²) * TP)/((1+Beta²) * TP + Beta² * FN + FP)`, si Beta -> 0 => précision, si Beta -> infini => rappel
 
 ### Arbres de régression
 
-// TODO Complete
+Un arbre de régression est une méthode pour obtenir un arbre de décision quand les attributs sont numérique (réels).
+
+`sortie = moyenne des y qui rentent`
+
+L'objectif est que chaque division doit faire en sorte que la moyenne sur chaque feuille ne soit "pas trop loin" des
+y qui restent. Autrement dit, l'étendue des valeurs n'est pas trop dispersée, nous utilisons donc `V` la variance.
+
+`VM(j) = p_j⁰ v(D_j⁰) + p_j¹`
+
+On arrête la construction de l'arbre quand le nombre d'éléments dans chaque feuille est inférieur
 
 ### Apprendre à classifier des images
 
@@ -225,4 +254,25 @@ La classification d'images est un sujet complexe, il rencontre les problèmes su
 - Déformation: un même objet peut prendre différente forme/posture (un chat allongé, sur le dos, assis, debout sur 2 pattes, ...)
 - Occlusion: un object peut-être dissimulé ou partiellement visible dans l'image
 
-#### Approche Data-driven
+### Hyperparamètres
+
+Un hyperparamètre est un choix que l'on effectue et que le l'algorithme **n'apprend pas**.
+Le choix des hyperparamètres dépend du problème.
+
+L'ajustement des hyperparamètres est réalisé en divisant le dataset en trois:
+- train
+- validation
+- test
+
+On choisit les hyperparamètres en utilisant l'ensemble de validation et utiliser l'ensemble test uniquement à la fin.
+
+### Fonction de coût
+
+On commence par faire une hypothèse:
+`h_w(x) = w_0 + w_1*x` avec **w** les paramètres (poids). 
+
+La fonction de coût (Loss function) a pour but de trouver les paramètres optimaux (les poids de **w**).
+La plus célèbre, Mean Square Error (MSE):
+
+`Loss(w_0, w_1) = 1/(2m) sum(h_w(x_i) - y_i)²` avec `m` le nombre d'instances. Également notée: `J(w_0, w_1)`
+
