@@ -78,16 +78,79 @@ dès lundi prochain.
 
 ## Les cinq (5) dimensions d'un projet logiciel et les compromis
 
+Dans un pentagone, où les sommets sont: **Fonctionnalités**, **Qualité**, **Coût**,
+**Échéance**, **Personnel**.
+
+Trois états (rôles) pour chaque dimension:
+- un objectif (driver) est une raison spécifique et importante pour laquelle le
+projet doit être réalisé. Il n’y a pas de flexibilité;
+- une contrainte est un facteur externe qui n’est pas sous le contrôle du chef de
+projet. Il y a très peu de flexibilité;
+- un degré de liberté (ce qui n’est pas objectif ou contrainte). Grande flexibilité.
+
 ## Les neurosciences et le profil cognitif des participants au projet
 
 Pourquoi traiter de ce sujet dans un cours de gestion de projet:
-– la prise de décision et le travail d’équipe sont importants en Gestion de projet;
-– Connaître notre mode de fonctionnement avec soi et les autres est donc un
+- la prise de décision et le travail d’équipe sont importants en Gestion de projet;
+- Connaître notre mode de fonctionnement avec soi et les autres est donc un
 atout pour la réussite;
-– Dans le cours de gestion, tenir compte de la psychologie et des besoins des
+- Dans le cours de gestion, tenir compte de la psychologie et des besoins des
 individus est une constante (ex.: pyramide des besoins de Maslow);
-– La gestion de projet implique la compréhension de la psychologie.
+- La gestion de projet implique la compréhension de la psychologie.
 
 Selon les travaux de Sperry, chaque hémisphère du cerveau est spécialisé dans un
 type de pensée. Le gauche est **logique**, **analytique**, **séquentiel** tandis
 que le droit est **spatial**, **visuel**, **affectif**.
+
+## Le code de déontologie
+
+Le code est là pour régir l'exercice de la profession d'ingénieur. Il contient un
+ensemble de droits et devoirs que chaque ingénieur se doit de respecter, la conduite
+ à suivre ainsi que les rapports entre les ingénieurs et le public.
+
+Posséder un code de déontologie pour une entreprise cela:
+1. Attirer de nouveaux employés
+  - Attirera des employés consciencieux et engagés et qui veulent être impliqués
+  dans une organisation qui produit un logiciel de qualité.
+2. Image professionnelle
+  - Promotion d’une image de marque pour votre société.
+    - En retour, cela laissera le public savoir que la société travaille
+    pour le bien du public et accepte fièrement cette responsabilité.
+  - Augmentera le respect du public de votre société et améliorera la qualité de
+  logiciel qu’il produit.
+3. Confiance du public
+  - Informe le public que leurs intérêts sont à coeur de l'entreprise, tout en les
+  informants des standards de la compagnie
+4. Déploiement et adoption au niveau international
+  - Un code adopté à la grandeur de la planète par tous les ingénieurs logiciels
+  et leur employeurs (voir [Software Engineering Ethics](https://www.etsu.edu/cbat/computing/seeri/))
+
+### Les intentions du code de déontologie
+
+1. Documenter les engagements moraux et professionnels des ingénieurs logiciels
+2. Informer les praticiens des normes auxxquelles la société s'attend à ce que
+les ingénieurs logiciels attendent les uns des autres.
+3. Informer le public des responsabilités de la profession.
+
+### L'intérêt du public
+
+Le souci pour la santé, la sureté et le bienêtre du public est _primordial_,
+c'est-à-dire que _l'intérêt du public est central_ à ce code de déontologie.
+
+Il existe huit (8) principes (aspirations) qui ont été ordonnées pour refléter
+l'ordre dans lequel les professionnels du logiciel doivent considérer leurs
+obligations morales:
+  - Les principes identifient les relations éthiques qui régissent les personnes,
+  les groupes et les organisations, ainsi que les obligations principales associées
+   à ces relations.
+
+| **Principe**  | **Description**	|
+|---------- |------------	|
+| Le public | Les ingénieurs logiciels doivent agir dans l’intérêt public en tout temps. |
+| Le client et l'employeur 	| Les ingénieurs logiciels doivent agir de manière à servir le mieux possible les intérêts de leurs clients et de leur employeur, toujours en fonction de l’intérêt public. |
+| Le produit | Les ingénieurs logiciels doivent s’assurer que leurs produits et les modifications connexes sont conformes aux normes professionnelles les plus élevées possibles. |
+| Le jugement | Les ingénieurs logiciels doivent maintenir leur intégrité et leur indépendance dans leur jugement professionnel. |
+| La gestion | Les gestionnaires et les responsables de génie logiciel doivent souscrire à une approche éthique de la gestion du développement et de la maintenance des logiciels et s’employer à en faire la promotion. 	|
+| La profession | Les ingénieurs logiciels doivent s’assurer de l’intégrité et la réputation de la profession en tenant compte de l’intérêt public.	|
+| Les collègues | Les ingénieurs logiciels doivent être justes et appuyer leurs collègues. |
+| Soi-même | Les ingénieurs logiciels doivent être en situation d’apprentissage continu et promouvoir une approche éthique à la pratique de leur profession. |
